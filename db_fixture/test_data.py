@@ -28,14 +28,12 @@ datas = {
          'event_id': 5, 'create_time': '2020-08-01 12:00:00'}
     ],
 }
-# 11111111111111
 
 
 # 将测试数据插入表
 def init_data():
     db = DB()
     for table, data in datas.items():
-        print(datas.items, 11111111111111111)
         db.clear(table)
         for d in data:
             db.insert(table, d)

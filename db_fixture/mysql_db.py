@@ -43,7 +43,6 @@ class DB:
         key = ','.join(table_data.keys())
         value = ','.join(table_data.values())
         real_sql = 'INSERT INTO ' + table_name + '(' + key + ')VALUE(' + value + ')'
-        print(real_sql, 8888888888888888888888888888888888)
         with self.conn.cursor() as cursor:
             cursor.execute(real_sql)
         self.conn.commit()
