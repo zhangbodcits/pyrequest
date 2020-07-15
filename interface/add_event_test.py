@@ -45,10 +45,9 @@ class AddEventTest(unittest.TestCase):
     def test_add_event_data_type_error(self):
         '''发布会时间错误'''
         payload = {'eid': 100, 'name': '1加4发布会', 'limit': '2000', 'address': '芮城县花园小区',
-                   'start_time': '2020-08-01'}
+                   'start_time': '2020'}
         r = requests.post(self.base_url, data=payload)
         self.result = r.json()
-        print(self.result,111111111111111111111111111111)
         self.assertEqual(self.result['status'], 10024)
         self.assertIn('start_time format error.', self.result['message'])
 
@@ -63,5 +62,5 @@ class AddEventTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    # test_data.init_data()  # 初始化接口测试数据
+    test_data.init_data()  # 初始化接口测试数据
     unittest.main()
